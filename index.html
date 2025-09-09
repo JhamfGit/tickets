@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Tickets - Completa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: white;
+            font-size: 0.9em;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 8px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e3f2fd;
+            transition: background-color 0.3s ease;
+        }
+        
+        .estado-closed {
+            background-color: #dc3545;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .contacto {
+            font-weight: 500;
+            color: #495057;
+            max-width: 200px;
+            word-wrap: break-word;
+        }
+        
+        .sujeto {
+            max-width: 300px;
+            word-wrap: break-word;
+            font-size: 0.85em;
+        }
+        
+        .table-container {
+            max-height: 70vh;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 5px;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            table {
+                font-size: 0.8em;
+            }
+            
+            th, td {
+                padding: 6px 4px;
+            }
+            
+            .sujeto {
+                max-width: 150px;
+            }
+            
+            .contacto {
+                max-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Reporte Completo de Tickets de Soporte</h1>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">50</div>
+                <div class="stat-label">Total Tickets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50</div>
+                <div class="stat-label">Tickets Cerrados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Contactos Únicos</div>
+            </div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sujeto</th>
+                        <th>Contacto</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="sujeto">Mantenimiento Físico Rack</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">WIFI SOLAR</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Cotización Memorias Ram para servidor Hyper-V</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Envio de Credenciales RFAST Infraestructura local</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Windows no Activado</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">caso consumo servidor suroriente Cauca (VMRDPSURORIENTECAUCA)</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Regla Firewall Azure</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Creación cliente nuevo - FONSECA</td>
+                        <td class="contacto">Christian Ramirez (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Impresora no escanea ni imprime</td>
+                        <td class="contacto">Christian Ramirez (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">usuario Edwin Londoño - error en servidor de aplicaciones01</td>
+                        <td class="contacto">Christian Ramirez (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud creación de usuario SuperAdmin</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud Regla firewall</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Soporte servidor Aplicaciones03</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Creacion cliente Eliecer Enrique Aragon Rois</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">remotespp</td>
+                        <td class="contacto">Christian Ramirez (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Acompañamiento en Sitio</td>
+                        <td class="contacto">Christian Ramirez (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Reinicio servidor r9-r-fastcom6004</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Regla firewall Alfredo</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud cambio DNS</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Renovacion certificado SSL</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Servidor Suroriente 10.2.0.4</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">instalacion de disco ssd</td>
+                        <td class="contacto">Christian Ramirez (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Configuración Acceso a las cámaras por teléfono móvil</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Conectividad VPN sstp Jorge Gutiérrez</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud soporte VPN usuario Anyila</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Renova certificado</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Plan de traslado en la creación base de datos Azure SQL Managed Instance</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Validación Vpn DB carros</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Certificado cliente San Bosco Rfast</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud creacion nueva vpn Usuario Infinitys en Onpremise y Azure</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicito soporte servidor sur oriente cauca</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud exponer WS de citas medicas de la ese Norte</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud licencia Windows server 2019 en el ambiente Onpremise</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Creación Conectividad nuevo modelo WS SanBosco</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">inhabilitacion VPN usuario retirado</td>
+                        <td class="contacto">Christian Ramirez (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud parchado servidor SurOriente</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud validación regla firewall conectividad looker estudio</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Configuración Regla firewall servicio y eliminación de regla</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud creacion regla firewall</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Caida_RDP_Gestion integra 6006</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">dominio no reconocido</td>
+                        <td class="contacto">Christian Ramirez (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud Regla firewall</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Validación urgente aplicaciones 02</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Validación urgente servidor Aplicaciones 03</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">desconexión Vpn de Azure a Onpremise servicio Facturación electrónica</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Solicitud Regla firewall</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">Canal ipsec Azure a RFAST On premise</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">servicio critico r9-r-fastcom6005</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                    <tr>
+                        <td class="sujeto">caso crítico surOriente cauca Impresión</td>
+                        <td class="contacto">Jose Manuel Collazo (RFAST LTDA)</td>
+                        <td><span class="estado-closed">Closed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="margin-top: 20px; text-align: center; color: #6c757d; font-size: 0.9em;">
+            <p><strong>Resumen:</strong> 50 tickets en total | 100% en estado Closed | 
+            José Manuel Collazo: 43 tickets | Christian Ramirez: 7 tickets</p>
+        </div>
+    </div>
+</body>
+</html>
